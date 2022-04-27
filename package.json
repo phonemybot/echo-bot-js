@@ -1,0 +1,20 @@
+{
+  "name": "echo-bot",
+  "version": "0.0.1",
+  "description": "basic echo-bot example - integrated with PhoneMyBot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "UNLICENCSED",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://robertomarega@bitbucket.org/robertomarega/bot-gateway.git"
+  }
+}
