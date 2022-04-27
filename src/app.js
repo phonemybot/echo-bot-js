@@ -7,12 +7,11 @@
 
 
 // LIBRARIES
-const package = require('./package.json');
-const port = config.port;
+const package = require('../package.json');
 global.config = require('./config');
+const port = config.bot.port;
 var express = require("express");
 var bodyParser = require('body-parser');
-logger.level = process.env.LOG_LEVEL;
 var app = express();
 
 // EXPRESS ROUTE

@@ -7,7 +7,6 @@
 
 
 const axios = require('axios');
-const config = require('/app/src/config');
 const validateAuthorization = require('../utilities/validateAuthorization');
 
 
