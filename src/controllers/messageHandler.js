@@ -9,6 +9,10 @@
 const axios = require('axios');
 
 async function messageHandler (req, res) {
+  
+  //**********************************************************************
+  // Printout the message received
+  console.log('Received message: \n', JSON.stringify(req.body,null,2));
 
   //***********************************************************************
   // INITIALIZE INPUT
@@ -59,6 +63,10 @@ async function messageHandler (req, res) {
   };
   let resData = null;
 
+  //**********************************************************************
+  // Printout the message to be sent
+  console.log('Sending message: \n', JSON.stringify(message,null,2));
+
   //*************************************
   /* SEND REPLY MESSAGE TO PHONEMYBOT     */
   await axios.post(url, message, httpConfig)
@@ -71,6 +79,7 @@ async function messageHandler (req, res) {
   .catch ( (err) => {
     return console.error(' sending message to PMB \n'. err);
   });
+
 
   // The message was delivered successfully to PhoneMyBot
   return console.log('Message sent: ', textMessage);
