@@ -82,7 +82,7 @@ async function messageHandler (req, res) {
 
 
   // The message was delivered successfully to PhoneMyBot
-  return console.log('Message sent: ', textMessage);
+  return;
 };
   
 module.exports = messageHandler;
