@@ -65,11 +65,11 @@ async function messageHandler (req, res) {
 
   //**********************************************************************
   // Printout the message to be sent
-  console.log('Sending message: \n', JSON.stringify(message,null,2));
+  console.log('Sending message: \n', JSON.stringify(responseMessage,null,2));
 
   //*************************************
   /* SEND REPLY MESSAGE TO PHONEMYBOT     */
-  await axios.post(url, message, httpConfig)
+  await axios.post(url, message: responseMessage, httpConfig)
   .then((response) => {
     resData = response.data;
     if(resData.success!=='true' && resData.reason === 'conversation not found') {
