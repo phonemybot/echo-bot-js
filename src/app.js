@@ -13,9 +13,16 @@ const port = config.bot.port;
 var express = require("express");
 var bodyParser = require('body-parser');
 var app = express();
+const authorization = require('./middleware/authorization');
+app.use(bodyParser.json());
+
+// AUTHORIZATION
+
+app.use(authorization);
+
 
 // EXPRESS ROUTE
-app.use(bodyParser.json());
+
 app.use('/echo-bot/message', require('./controllers/messageHandler'));
 
 // PRINT LOG AT START

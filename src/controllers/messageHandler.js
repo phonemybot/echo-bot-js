@@ -7,8 +7,6 @@
 
 
 const axios = require('axios');
-const validateAuthorization = require('../utilities/validateAuthorization');
-
 
 async function messageHandler (req, res) {
 
@@ -18,12 +16,6 @@ async function messageHandler (req, res) {
   const first = req.body.new; // NOTE: new is special keywork in javascript
   const hints = req.body.hints ? JSON.parse(req.body.hints) : {};
   
-  //***********************************************************************
-  // CHECK AUTHORIZATION
-  if (!validateAuthorization({
-    authorization: req.headers.authorization,
-    securityToken: config.bot.securityToken
-  })) return res.status(401).json({ message: 'Unauthorized'});
   
   //*************************************
   // REPLY TO PHONEMYBOT AND CONTINUE
