@@ -77,7 +77,7 @@ async function messageHandler (req, res) {
     }
   })
   .catch ( (err) => {
-    return console.error(' sending message to PMB \n'. err);
+    return console.error('sending message to PMB \n', err);
   });
 
 
