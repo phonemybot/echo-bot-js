@@ -30,7 +30,7 @@ async function messageHandler (req, res) {
 
   //*************************************
   // RETURN IF TEXT MESSAGE IS EMPTY
-  if (body.length <= 0 || last ) return;
+  if ( (body.length <= 0 && first !== true) || last ) return;
 
   //*************************************
   /* BUILDING THE RESPONSE MESSAGE     */
@@ -39,7 +39,7 @@ async function messageHandler (req, res) {
   if(first) {  // This is a new session
     // Here the welcome message
     textMessage = 'This is an echo chatbot. Whatever you say I will repeat the same. Try me!'; 
-  } else textMesage = body; // Echoing received message
+  } else textMessage = body; // Echoing received message
 
   // Here define the full message
   const responseMessage = {
@@ -52,7 +52,7 @@ async function messageHandler (req, res) {
   }
 
   // completing the http structure
-  const { protocol, host, port } = config.pmb
+  const url = config.pmb.url;
   const resource = '/voicebot/send/' + conversation;
   const url = `${protocol}://${host}:${port}/cloudengine/rest/voicebot/send`;
   const httpConfig = {

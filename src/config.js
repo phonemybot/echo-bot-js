@@ -19,9 +19,9 @@ module.exports = {
   // *************************************
   // PhoneMyBot configuration parameters
   pmb: {
-    host: 'cloudengine.imnet.com',
-    port: 8443,          // You can change this
-    protocol: 'https',
+    // You should change the following url according to the endpoint
+    // indicated in the control panel of  your PhoneMyBot chatbot
+    url: 'https://cloudengine.imnet.com:8443/cloudengine/rest/voicebot/send', 
     securityToken: '--'  // !! should be replaced with the security token
                          // provided with the PhoneMyBot channel
   }
