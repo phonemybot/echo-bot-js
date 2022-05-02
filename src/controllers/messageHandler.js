@@ -64,7 +64,7 @@ async function messageHandler (req, res) {
   //**********************************************************************
   // Printout the message to be sent
   console.log('Sending message: \n', JSON.stringify(responseMessage,null,2));
-  console.log('Sending message: \n', url. responseMessage, httpConfig);
+  console.log('Sending message: \n', url, responseMessage, httpConfig);
 
   //*************************************
   /* SEND REPLY MESSAGE TO PHONEMYBOT     */
