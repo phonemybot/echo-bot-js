@@ -52,9 +52,7 @@ async function messageHandler (req, res) {
   }
 
   // completing the http structure
-  const url = config.pmb.url;
-  const resource = '/voicebot/send/' + conversation;
-  const url = `${protocol}://${host}:${port}/cloudengine/rest/voicebot/send`;
+  const url = config.pmb.url + '/' + conversation;
   const httpConfig = {
     headers: { 
       'Content-Type': 'application/json',
