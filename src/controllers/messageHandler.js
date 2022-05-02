@@ -64,7 +64,6 @@ async function messageHandler (req, res) {
   //**********************************************************************
   // Printout the message to be sent
   console.log('Sending message: \n', JSON.stringify(responseMessage,null,2));
-  console.log('Sending message: \n', url, responseMessage, httpConfig);
 
   //*************************************
   /* SEND REPLY MESSAGE TO PHONEMYBOT     */
@@ -74,6 +73,7 @@ async function messageHandler (req, res) {
     if(resData.success!=='true' && resData.reason === 'conversation not found') {
       console.log('PhoneMyBot didn\'t find the corresponding conversation');
     }
+    console.log('Response: ', resData);
   })
   .catch ( (e) => {
     return console.error('sending message to PMB: %s \n ', 
@@ -81,7 +81,6 @@ async function messageHandler (req, res) {
      e.response ? e.response.data : 'no data');
   });
 
-  console.log('message successfully delivered!');
 
   // The message was delivered successfully to PhoneMyBot
   return;
