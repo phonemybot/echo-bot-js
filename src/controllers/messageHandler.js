@@ -48,7 +48,7 @@ async function messageHandler (req, res) {
     to: from,     // ...
     conversation,
     last: false,
-    first: false
+    new: false
   }
 
   // completing the http structure
