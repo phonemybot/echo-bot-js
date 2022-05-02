@@ -75,7 +75,9 @@ async function messageHandler (req, res) {
     }
   })
   .catch ( (err) => {
-    return console.error('sending message to PMB \n', err);
+    return console.error('sending message to PMB: %s \n ', 
+     e.message ? e.message : 'unexpected error with Direct API request', 
+     e.response ? e.response.data : 'no data');
   });
 
 
