@@ -74,7 +74,7 @@ async function messageHandler (req, res) {
       console.log('PhoneMyBot didn\'t find the corresponding conversation');
     }
   })
-  .catch ( (err) => {
+  .catch ( (e) => {
     return console.error('sending message to PMB: %s \n ', 
      e.message ? e.message : 'unexpected error with Direct API request', 
      e.response ? e.response.data : 'no data');
